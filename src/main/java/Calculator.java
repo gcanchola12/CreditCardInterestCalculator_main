@@ -1,7 +1,7 @@
 public class Calculator {
 
-    public Float calculate(float balance, float interest) {
-        float interestAmount = balance * interest;
+    public double calculate(int balance, double interest) {
+        double interestAmount = balance * interest;
         return interestAmount;
     }
 }

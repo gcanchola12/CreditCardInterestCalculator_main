@@ -1,49 +1,50 @@
 public class CreditCard {
 
-    float interest;
-    float balance;
-    float interestAmount;
-    String creditCardType;
+    String type;
+    double interest;
+    int balance;
+    double interestPayment;
 
-    public CreditCard(float interest, float balance, float interestAmount, String creditCardType) {
-        this.interest = interest;
+    public CreditCard(String type, int balance) {
+        this.type = type;
         this.balance = balance;
-        this.interestAmount = interestAmount;
-        this.creditCardType = creditCardType;
     }
 
-    public float getInterest() {
+    public String getType() {
+        return type;
+    }
+
+    // TODO create an exception to allow user to only enter one of the three types of cards
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public double getInterest() {
+        if (getType() == "DISCOVER") {
+            interest = .01;
+        } if (getType() == "MASTERCARD") {
+            interest = .05;
+        } if (getType() == "VISA") {
+            interest = .10;
+        }
+
         return interest;
     }
 
-    public void setInterest(float interest) {
-        this.interest = interest;
-    }
-
-    public float getBalance() {
+    public int getBalance() {
         return balance;
     }
 
-    public void setBalance(float balance) {
+    public void setBalance(int balance) {
         this.balance = balance;
     }
 
-    public float getInterestAmount() {
+    public double getInterestPayment() {
         Calculator calculator = new Calculator();
-        interestAmount = calculator.calculate(getBalance(), getInterest());
-        return interestAmount;
+        interestPayment = calculator.calculate(getBalance(), getInterest());
+        return interestPayment;
     }
-
-    public String getCreditCardType() {
-        if (getInterest() == .01) {
-            creditCardType = "Discover";
-        } if (getInterest() == .05) {
-            creditCardType = "MasterCard";
-        } if (getInterest() == .10) {
-            creditCardType = "Visa";
-        }
-
-        return creditCardType;
-    }
-
 }
+
+

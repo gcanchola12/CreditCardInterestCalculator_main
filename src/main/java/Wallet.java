@@ -2,40 +2,25 @@ import java.util.ArrayList;
 
 public class Wallet {
 
+    CreditCard creditCard;
     ArrayList<CreditCard> creditCards = new ArrayList<>();
-    String walletName;
-    float sumOfInterest;
 
-    public Wallet(ArrayList<CreditCard> creditCards, String walletName, float sumOfInterest) {
-        this.creditCards = creditCards;
-        this.walletName = walletName;
-        this.sumOfInterest = sumOfInterest;
-    }
-
-    public ArrayList<CreditCard> getCreditCards() {
+    public ArrayList getCreditCards() {
         return creditCards;
     }
 
-    public void setCreditCards(ArrayList<CreditCard> creditCards) {
-        this.creditCards = creditCards;
+    public void addCreditCard(CreditCard creditCard) {
+        creditCards.add(creditCard);
     }
 
-    public String getWalletName() {
-        return walletName;
-    }
-
-    public void setWalletName(String walletName) {
-        this.walletName = walletName;
-    }
-
-    public float getSumOfInterest() {
-        Calculator calculator = new Calculator();
-        sumOfInterest = 0;
+    public double getWalletInterestTotal() {
+        double walletInterestTotal = 0;
 
         for (CreditCard creditCard : creditCards) {
-            sumOfInterest += creditCard.getInterestAmount();
+            walletInterestTotal += creditCard.interestPayment;
         }
 
-        return sumOfInterest;
+        return  walletInterestTotal;
     }
+
 }

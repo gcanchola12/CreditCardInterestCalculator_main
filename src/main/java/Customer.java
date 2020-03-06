@@ -2,27 +2,20 @@ import java.util.ArrayList;
 
 public class Customer {
 
-    String name;
-    ArrayList<Wallet> wallets = new ArrayList<>();
+    ArrayList<Wallet> wallets;
 
-    public Customer(String name, ArrayList<Wallet> wallets) {
-        this.name = name;
-        this.wallets = wallets;
+    public void addWallet(Wallet wallet) {
+        wallets.add(wallet);
     }
 
-    public String getName() {
-        return name;
+    public double totalWalletsInterest() {
+        double totalWalletInterest = 0;
+        for (Wallet wallet : wallets) {
+            totalWalletInterest += wallet.getWalletInterestTotal();
+        }
+
+        return totalWalletInterest;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
 
-    public ArrayList<Wallet> getWallets() {
-        return wallets;
-    }
-
-    public void setWallets(ArrayList<Wallet> wallets) {
-        this.wallets = wallets;
-    }
 }
