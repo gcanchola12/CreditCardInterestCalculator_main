@@ -12,9 +12,7 @@ public class CustomerTest {
     }
 
     @Test
-    public void getWallets() throws Exception{
-
-
+    public void getWallets() throws Exception {
 
     }
 

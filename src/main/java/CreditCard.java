@@ -14,9 +14,11 @@ public class CreditCard {
         return type;
     }
 
-    // TODO create an exception to allow user to only enter one of the three types of cards
-
-    public void setType(String type) {
+    public void setType(String type) throws Exception {
+        type.toUpperCase();
+        if (!type.equals("DISCOVER") || !type.equals("MASTERCARD") || !type.equals("")) {
+            throw new Exception("Only Discover, MasterCard or Visa are allowed");
+        }
         this.type = type;
     }
 
@@ -40,7 +42,7 @@ public class CreditCard {
         this.balance = balance;
     }
 
-    public double getInterestPayment() {
+    public double getInterestPayment() throws Exception {
         Calculator calculator = new Calculator();
         interestPayment = calculator.calculate(getBalance(), getInterest());
         return interestPayment;
