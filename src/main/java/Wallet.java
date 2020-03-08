@@ -2,10 +2,20 @@ import java.util.ArrayList;
 
 public class Wallet {
 
+    CreditCard creditCard;
     ArrayList<CreditCard> creditCards = new ArrayList<>();
 
-    public ArrayList getCreditCards() {
-        return creditCards;
+    public Wallet(CreditCard creditCard) {
+        this.creditCard = creditCard;
+    }
+
+    public String getCreditCards() {
+        ArrayList<String> creditCardTypes = new ArrayList<>();
+
+        for (CreditCard creditCard : creditCards) {
+            creditCardTypes.add(creditCard.getType());
+        }
+        return creditCardTypes.toString();
     }
 
     public void addCreditCard(CreditCard creditCard) {
@@ -21,5 +31,4 @@ public class Wallet {
 
         return  walletInterestTotal;
     }
-
 }

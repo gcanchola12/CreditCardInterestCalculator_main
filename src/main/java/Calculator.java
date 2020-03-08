@@ -4,4 +4,7 @@ public class Calculator {
         double interestAmount = balance * interest;
         return interestAmount;
     }
+
+    public Calculator() {
+    }
 }
