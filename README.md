@@ -42,7 +42,7 @@ Each case tests the interest per person, per wallet and/or per card.
 
 ## SOLID Principles
 
-Single Responsiblity:
+###Single Responsiblity###
 
 Open-closed principle:
 
