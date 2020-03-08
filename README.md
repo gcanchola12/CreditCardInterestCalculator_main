@@ -1,6 +1,6 @@
 # Credit Card Interest Calculator
 
-A calculator built using Java for calculating credit card interest. 
+A calculator built using Java for calculating simple credit card interest. 
 
 ## About the program
 
@@ -26,13 +26,22 @@ customer.getTotalWalletsInterest();
 
 There are four test cases. 
 
-Test Case 1: Person 1 has 1 wallet with one of each of the cards. 
-Test Case 2: Person 1 has 1 wallet with two cards.
-Test Case 3: Person 1 has 1 wallet with one of each of the cards and person 2 has 1 wallet with 2 cards. 
-
+Test Case 1 
+```
+Person 1 has 1 wallet with one of each of the cards. 
+```
+Test Case 2
+```
+Person 1 has 1 wallet with two cards.
+```
+Test Case 3 
+```
+Person 1 has 1 wallet with one of each of the cards and person 2 has 1 wallet with 2 cards. 
+```
 Each case tests the interest per person, per wallet and/or per card. 
 
 ## SOLID Principles
+
 Single Responsiblity:
 
 Open-closed principle:
