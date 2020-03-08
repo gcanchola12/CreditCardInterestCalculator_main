@@ -1,7 +1,9 @@
 public class CreditCard {
 
-    String type;
-    int balance;
+    private final String type;
+    private int balance;
+
+    // credit card constructor only accepts Discover, MasterCard or Visa.
 
     //TODO shorten first if statement
 
@@ -11,7 +13,6 @@ public class CreditCard {
         } else {
             throw new IllegalArgumentException("Sorry, wallet only accepts Discover, MasterCard, Visa.");
         }
-
         this.balance = balance;
     }
 
@@ -19,13 +20,7 @@ public class CreditCard {
         return type;
     }
 
-    public int getBalance () {
-        return balance;
-    }
-
-    public void setBalance ( int balance) {
-        this.balance = balance;
-    }
+    // uses the calculator object to find the amount of interest a customer will pay
 
     public double getInterestPayment() {
         Calculator calculator = new Calculator();

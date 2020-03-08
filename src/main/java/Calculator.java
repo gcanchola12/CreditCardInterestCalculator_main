@@ -2,6 +2,8 @@ import java.util.ArrayList;
 
 public class Calculator {
 
+    // calculate credit card interest amount
+
     public double calculateInterest(String creditCardType, int balance ) {
         double rate = 0;
         if (creditCardType.equals("DISCOVER")) {
@@ -14,6 +16,8 @@ public class Calculator {
 
         return rate * balance;
     }
+
+    // calculate the sum of the interest of all the cards in a wallet.
 
     public double calculateWalletInterest(ArrayList<CreditCard> creditCards) {
         double walletTotal = 0;
