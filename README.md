@@ -42,11 +42,11 @@ Each case tests the interest per person, per wallet and/or per card.
 
 ## SOLID Principles
 
-In designing this program, I decided to take a real life approach because it was the best way of implementing the S.O.L.I.D principles. In reality, a customer will have a credit card, they enter that card in their wallet, and then they might store it with the rest of their wallets. Later, when a person wants to calculate how much money is going toward interest, they might take out their calculators and do some math. Similarily, this program contains 4 objects: 1 credit card, 1 wallet, 1 'person with more wallets' object. 
+In designing this program, I decided to take a real life approach because it was the best way of implementing the S.O.L.I.D principles. In the real world, a customer can have a credit card, they can enter it in their wallet, and then put their wallet away with their other wallets to start a collection. Later, when they want to calculate how much money is going toward interest, they might take out their calculators and do some math. Similarily, this program contains 4 objects: 1 credit card, 1 wallet, 1 'person with more wallets' object. 
 
 <b>Single Responsiblity</b> Each object has a single job. For example, rather than have each object handle its own calculations, it was more efficiant to have a single calculator class that handles the calculations for the rest of the classes. 
 
-<b>Open-closed principle</b> Each object has its own method that calls upon the calculator object to find the interest of each credit card. The wallet and customer objects extend upon the calculator output by using it to calculate the sum of the wallet or wallets - all without making a single modification to the calculator object. 
+<b>Open-closed principle</b> As stated, each object instantiates the calculator object to calculate the total interest or sum of interest. The customer object extends upon it by using it to find the total for each wallet in the collection, but then it adds each sum to find the total for the collection of wallets - without modifying the calculator class at all. 
 
 <b>Liskov substitution principle</b> I considered creating an object for each type of credit card and have them inherent from a credit card class to more closely reflect how real life people use credit cards. After all, you don't have generic credit cards in your wallet that you can later set to the type and interest rate of your choice. However, I found that it would have broken this principle because I could not replace a discover with a visa (and who would want to?).
 
