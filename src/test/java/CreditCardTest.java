@@ -5,10 +5,6 @@ import static org.junit.Assert.*;
 
 public class CreditCardTest {
 
-    @Before
-    public void setUp() throws Exception {
-    }
-
     @Test(expected = IllegalArgumentException.class)
     public void typeNotCorrect() throws IllegalArgumentException {
         CreditCard creditCard = new CreditCard("Barclay", 100 );
@@ -24,7 +20,7 @@ public class CreditCardTest {
     }
 
     @Test
-    public void getInterestPayment() throws Exception {
+    public void getInterestPayment() {
         CreditCard creditCard = new CreditCard("MasterCard", 100);
 
         assertEquals(5, creditCard.getInterestPayment(), 0.01);

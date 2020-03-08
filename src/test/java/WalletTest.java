@@ -1,29 +1,34 @@
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 public class WalletTest {
 
-
     @Test
-    public void addACreditCardToWallet() {
-        CreditCard creditCard = new CreditCard("MasterCard", 100);
-        CreditCard visa = new CreditCard("Visa", 100);
-        Wallet wallet = new Wallet(creditCard);
+    public void canAddCreditCardToWallet() {
+        Wallet wallet = new Wallet();
+        CreditCard visa = new CreditCard("visa", 100);
+        CreditCard discover = new CreditCard("discover", 100);
+        CreditCard mastercard = new CreditCard("MasterCard", 100);
 
-        wallet.addCreditCard(creditCard);
         wallet.addCreditCard(visa);
+        wallet.addCreditCard(discover);
+        wallet.addCreditCard(mastercard);
 
-        assertEquals("[MASTERCARD, VISA]", wallet.getCreditCards() );
+        assertEquals(3, wallet.getCreditCards().size());
     }
 
     @Test
-    public void addCreditCard() {
-    }
+    public void canGetTotalInterest() {
+        Wallet wallet = new Wallet();
+        CreditCard visa = new CreditCard("visa", 100);
+        CreditCard discover = new CreditCard("discover", 100);
+        CreditCard mastercard = new CreditCard("MasterCard", 100);
 
-    @Test
-    public void getWalletInterestTotal() {
+        wallet.addCreditCard(visa);
+        wallet.addCreditCard(discover);
+        wallet.addCreditCard(mastercard);
+
+        assertEquals(16, wallet.getWalletTotalInterest(), 0);
     }
 }

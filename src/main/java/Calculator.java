@@ -1,10 +1,27 @@
+import java.util.ArrayList;
+
 public class Calculator {
 
-    public double calculate(int balance, double interest) {
-        double interestAmount = balance * interest;
-        return interestAmount;
+    public double calculateInterest(String creditCardType, int balance ) {
+        double rate = 0;
+        if (creditCardType.equals("DISCOVER")) {
+            rate = .01;
+        } if (creditCardType.equals("MASTERCARD")) {
+            rate = .05;
+        } if (creditCardType.equals("VISA")) {
+            rate = .10;
+        }
+
+        return rate * balance;
     }
 
-    public Calculator() {
+    public double calculateWalletInterest(ArrayList<CreditCard> creditCards) {
+        double walletTotal = 0;
+        for (CreditCard creditCard : creditCards) {
+            walletTotal += creditCard.getInterestPayment();
+        }
+
+        return walletTotal;
     }
+
 }

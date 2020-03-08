@@ -1,9 +1,7 @@
 public class CreditCard {
 
     String type;
-//    double interest;
     int balance;
-    double interestPayment;
 
     //TODO shorten first if statement
 
@@ -29,22 +27,10 @@ public class CreditCard {
         this.balance = balance;
     }
 
-    public double getInterestPayment () {
-        double interest = 0;
-
-        if (type.equals("DISCOVER")) {
-            interest = .01;
-        } if (type.equals("MASTERCARD")) {
-            interest = .05;
-        } else {
-            interest = .10;
-        }
-
-        interestPayment = balance * interest;
-        return interestPayment;
+    public double getInterestPayment() {
+        Calculator calculator = new Calculator();
+        return calculator.calculateInterest(type, balance);
     }
-
-
 }
 
 
