@@ -50,6 +50,6 @@ In designing this program, I decided to take a real life approach because it was
 
 <b>Liskov substitution principle</b> I considered creating an object for each type of credit card and have them inherent from a credit card class to more closely reflect how real life people use credit cards. After all, you don't have generic credit cards in your wallet that you can later set to the type and interest rate of your choice. However, I found that it would have broken this principle because I could not replace a discover with a visa (and who would want to?).
 
-<b>Interface segregation principle</b> This program does not implement any interfaces therefore I did not follow this principle. 
+<b>Interface segregation principle</b> This program does not implement any interfaces therefore I did not follow this principle. I would have created a Discover, MasterCard and Visa objects that would have implemented a credit card interface. However, I feel the current program is just as efficient. 
 
 <b>Dependency Inversion Principle</b> Rather than have wallet instantiate a credit card object, I decided to create a method that passes in a credit card object instead so that the wallet can exist even if it doesn't have a credit card. That gives the program more flexibility because I can create a credit card even after a wallet is created and added to a customer object. 
