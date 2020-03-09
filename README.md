@@ -44,7 +44,7 @@ Each case tests the interest per person, per wallet and/or per card.
 
 In designing this program, I decided to take a real life approach because it was the best way of implementing the S.O.L.I.D principles. In the real world, a customer can have a credit card, they can enter it in their wallet, and then put their wallet away with their other wallets to start a collection. Later, when they want to calculate how much money is going toward interest, they might take out their calculators and do some math. Similarily, this program contains 4 objects: 1 credit card, 1 wallet, 1 'person with more wallets' object. 
 
-<b>Single Responsiblity</b> Each object has a single job. For example, rather than have each object handle its own calculations, it was more efficiant to have a single calculator class that handles the calculations for the rest of the classes. 
+<b>Single Responsibility</b> Each object has a single job. For example, rather than have each object handle its own calculations, it was more efficiant to have a single calculator class that handles the calculations for the rest of the classes. 
 
 <b>Open-closed principle</b> As stated, each object instantiates the calculator object to calculate the total interest or sum of interest. The customer object extends upon it by using it to find the total for each wallet in the collection, but then it adds each sum to find the total for the collection of wallets - without modifying the calculator class at all. 
 
