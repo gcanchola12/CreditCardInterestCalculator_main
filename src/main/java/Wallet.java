@@ -17,7 +17,11 @@ public class Wallet {
     // uses the calculator object to return the total interest amount for this wallet.
 
     public double getWalletTotalInterest() {
-        Calculator calculator = new Calculator();
-        return calculator.calculateWalletInterest(creditCards);
+        double walletTotal = 0;
+
+        for (CreditCard creditCard : creditCards) {
+            walletTotal += creditCard.getInterestPayment();
+        }
+        return walletTotal;
     }
 }

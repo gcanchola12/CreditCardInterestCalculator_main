@@ -17,15 +17,4 @@ public class Calculator {
         return rate * balance;
     }
 
-    // calculate the sum of the interest of all the cards in a wallet.
-
-    public double calculateWalletInterest(ArrayList<CreditCard> creditCards) {
-        double walletTotal = 0;
-        for (CreditCard creditCard : creditCards) {
-            walletTotal += creditCard.getInterestPayment();
-        }
-
-        return walletTotal;
-    }
-
 }

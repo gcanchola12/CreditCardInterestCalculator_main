@@ -21,9 +21,9 @@ public class Customer {
         double total = 0;
 
         for (Wallet wallet : wallets) {
-            Calculator calculator = new Calculator();
-            total += calculator.calculateWalletInterest(wallet.getCreditCards());
+            total += wallet.getWalletTotalInterest();
         }
+
         return  total;
     }
 }
