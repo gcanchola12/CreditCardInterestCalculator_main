@@ -14,7 +14,7 @@ public class CustomerTest {
 
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         discover = new CreditCard("discover", 100);
         mastercard = new CreditCard("mastercard", 100);
         visa = new CreditCard("visa", 100);

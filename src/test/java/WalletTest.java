@@ -11,7 +11,7 @@ public class WalletTest {
     CreditCard visa;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         wallet = new Wallet();
         discover = new CreditCard("discover", 100);
         mastercard = new CreditCard("mastercard", 100);

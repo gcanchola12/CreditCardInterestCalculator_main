@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Wallet {
 
-    ArrayList<CreditCard> creditCards = new ArrayList<>();
+    final ArrayList<CreditCard> creditCards = new ArrayList<>();
 
     public ArrayList<CreditCard> getCreditCards() {
         return creditCards;

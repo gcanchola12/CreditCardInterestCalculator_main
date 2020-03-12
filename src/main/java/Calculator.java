@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 public class Calculator {
 
     // calculate credit card interest amount

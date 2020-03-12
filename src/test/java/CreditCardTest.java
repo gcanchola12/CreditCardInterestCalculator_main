@@ -8,12 +8,12 @@ public class CreditCardTest {
     CreditCard creditCard;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         creditCard = new CreditCard("discover", 100);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void typeNotCorrect() throws IllegalArgumentException {
+    public void incorrectTypeEntered() throws IllegalArgumentException {
         CreditCard creditCard = new CreditCard("Barclay", 100);
 
         assertEquals("MASTERCARD", creditCard.getType());
